@@ -1,0 +1,23 @@
+Problem statment :
+
+Read and append content on files in Python 
+Take one file and read the contents on that file.
+Read file
+
+Solution:
+
+# Open the file in read mode and read its content
+file_path = "example.txt"
+with open(file_path, "r") as file:
+    file_content = file.read()
+
+# Display the content of the file
+print("Content of the file:")
+print(file_content)
+
+# Open the same file in append mode and append additional content
+additional_content = "This is additional content to be appended."
+with open(file_path, "a") as file:
+    file.write("\n" + additional_content)
+
+print("Additional content appended successfully.")

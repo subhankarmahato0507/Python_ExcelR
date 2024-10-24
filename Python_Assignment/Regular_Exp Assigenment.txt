@@ -1,0 +1,122 @@
+
+1. Find all matching string that contains “ai”.
+
+Solution:
+
+import re
+
+# Define a list of strings to search
+
+strings = [
+    "I love artificial intelligence.",
+    "This is an example of regex usage.",
+    "AI is changing the world.",
+    "Regex can be quite powerful.",
+    "Python is great for AI applications."
+]
+
+# Define a regular expression pattern to search for strings containing "ai" (case insensitive)
+
+pattern = r'\b\w*ai\w*\b'
+
+# Use re.findall() to find all matches of the pattern in each string
+
+matches = [string for string in strings if re.search(pattern, string, re.IGNORECASE)]
+
+# Print the matches
+
+for match in matches:
+    print(match)
+
+
+
+
+
+
+
+2. Make a search that returns no match:
+
+Solution:
+
+
+import re
+
+# Define a list of strings to search
+strings = [
+    "I love artificial intelligence.",
+    "This is an example of regex usage.",
+    "AI is changing the world.",
+    "Regex can be quite powerful.",
+    "Python is great for AI applications."
+]
+
+# Define a regular expression pattern to search for a specific condition that won't be found
+
+pattern = r'\b\w*xyz\w*\b'  # Searching for a non-existing substring "xyz"
+
+# Use re.findall() to find all matches of the pattern in each string
+
+matches = [string for string in strings if re.search(pattern, string, re.IGNORECASE)]
+
+if not matches:
+    print("No matches found.")
+else:
+    print("Matches found:")
+    for match in matches:
+        print(match)
+
+
+
+
+
+
+3.Replace the first two occurrences of a white-space character with the digit 5.
+
+Solution:
+
+import re
+input_string = "This is an example sentence with some white-space characters."
+
+pattern = r'\s'
+
+def replace_first_two(match):
+    global count
+    count += 1
+    if count <= 2:
+        return '5'
+    else:
+        return match.group(0)
+
+count = 0
+
+output_string = re.sub(pattern, replace_first_two, input_string)
+
+print(output_string)
+
+
+
+
+
+
+4. Program to sort alphabetically the words form a string provided by the user
+
+
+Solution:
+
+
+def sort_words_alphabetically(input_string):
+    words = input_string.split()
+    sorted_words = sorted(words)
+    return ' '.join(sorted_words)
+
+input_string = input("Enter a string: ")
+sorted_string = sort_words_alphabetically(input_string)
+
+print("Sorted string:", sorted_string)
+
+
+o/p-
+
+
+Enter a string: bannana, dog, cool, apple
+Sorted string: apple bannana, cool, dog,

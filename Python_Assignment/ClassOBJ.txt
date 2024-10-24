@@ -1,0 +1,48 @@
+1. Create a class named Person, use the __init__() function to assign values for name and age:
+
+
+Solution:
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+person1 = Person("Alice", 30)
+person2 = Person("Bob", 25)
+
+print("Person 1:")
+print("Name:", person1.name)
+print("Age:", person1.age)
+
+print("\nPerson 2:")
+print("Name:", person2.name)
+print("Age:", person2.age)
+
+
+
+
+2 Create clock class that containt Hr min sec. Accept the value and display it.
+
+Solution:
+
+class Clock:
+    def __init__(self):
+        self.hours = 0
+        self.minutes = 0
+        self.seconds = 0
+
+    def set_time(self, hours, minutes, seconds):
+        self.hours = hours
+        self.minutes = minutes
+        self.seconds = seconds
+
+    def display_time(self):
+        print(f"Time: {self.hours:02d}:{self.minutes:02d}:{self.seconds:02d}") #02d is for taking atleast 2 digit
+
+clock = Clock()
+
+clock.set_time(10, 30, 45)
+clock.display_time()
+
+

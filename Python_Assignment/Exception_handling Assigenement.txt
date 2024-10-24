@@ -1,0 +1,69 @@
+
+1. To check the files is exist or not in drive otherwise throw exception.
+
+Solution:
+
+def read_file(filename):
+
+    try:
+        with open(filename, "r") as f:
+            return f.read()
+    except FileNotFoundError:
+        raise FileNotFoundError(f"The file '{filename}' does not exist.")
+
+try:
+    file_contents = read_file("my_file.txt")
+    print(file_contents)
+except FileNotFoundError as e:
+    print("Error:", e)
+
+
+
+
+
+2. Probleme statment : Find number that divide by zero otherwise throw exception.
+
+
+
+Solution:
+
+
+def divide_numbers(a, b):
+  
+    try:
+        result = a / b
+        return result
+    except ZeroDivisionError:
+        raise ZeroDivisionError("Cannot divide by zero.")
+
+
+try:
+    result = divide_numbers(10, 2)
+    print("Result:", result)
+    
+    result = divide_numbers(10, 0)  # This will raise a ZeroDivisionError
+    print("Result:", result)  # This line won't be executed
+except ZeroDivisionError as e:
+    print("Error:", e)
+
+
+
+
+
+.
+3. Program to print the reciprocal of even numbers
+
+Solution:
+
+try:
+  num = int(input("Enter a number: "))
+  if num % 2 != 0:
+    raise ValueError("The number must be even.")
+
+  # Calculate the reciprocal of the number.
+  reciprocal = 1 / num
+
+  print("The reciprocal of", num, "is", reciprocal)
+
+except ValueError as e:
+  print(e)
